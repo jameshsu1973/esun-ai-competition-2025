@@ -141,8 +141,8 @@ class Predictor:
             ✓ 已儲存: ./output/submission_improved.csv
             ✓ 含機率版本: ./output/submission_improved_with_prob.csv
         """
-        # if output_path is None:
-        #     output_path = Config.OUTPUT_PATH + 'submission_improved.csv'
+        if output_path is None:
+            output_path = Config.OUTPUT_PATH + 'submission_improved.csv'
         
         # 確保輸出資料夾存在
         output_dir = os.path.dirname(output_path)
