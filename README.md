@@ -406,8 +406,6 @@ N_JOBS = -1               # 使用所有 CPU 核心（LightGBM/XGBoost）
 - Recall vs Threshold 曲線
 - 最佳閾值標記
 
-![閾值分析示意圖](threshold_analysis.png)
-
 ---
 
 ## 關鍵發現
