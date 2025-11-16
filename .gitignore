@@ -1,0 +1,73 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 快取檔案
+*.pkl
+*.joblib
+
+# 輸出結果
+output/
+*.csv
+*.png
+
+# 資料檔案（競賽資料不上傳）
+40_初賽資料_V3 1/
+preliminary_data/
+*.zip
+
+# 模型檔案
+*.h5
+*.model
+*.bin
+
+# 系統檔案
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 測試與暫存
+test/
+tmp/
+temp/
+*.log
+
+# 競賽相關（不上傳的檔案）
+submission_*.csv
+features_*.pkl
+threshold_analysis*.png
+ensemble_models.pkl
