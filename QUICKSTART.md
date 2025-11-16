@@ -4,7 +4,7 @@
 
 ### 1. 克隆專案
 ```bash
-git clone [您的 GitHub 連結]
+git clone https://github.com/jameshsu1973/esun-ai-competition-2025.git
 cd AI_cup
 ```
 
