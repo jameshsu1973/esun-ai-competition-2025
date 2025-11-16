@@ -1,8 +1,9 @@
-# 玉山人工智慧公開挑戰賽 2024 - 詐欺交易偵測
+# AI CUP 2025 玉山人工智慧公開挑戰賽－AI偵探出任務，精準揪出警示帳戶！
 
-## 📋 建模概述
+## 簡介
 
 本專案針對銀行帳戶交易資料進行詐欺偵測分析，採用 **Ensemble Learning** 方法結合多種梯度提升樹模型（LightGBM、XGBoost、CatBoost），透過高活躍帳戶採樣策略和豐富的特徵工程，有效識別異常交易模式。
+比賽網址: https://tbrain.trendmicro.com.tw/Competitions/Details/40
 
 ### 核心方法
 
@@ -37,7 +38,7 @@
 
 ---
 
-## 🖥️ 環境需求
+## 環境需求
 
 ### Python 版本
 ```
@@ -116,7 +117,7 @@ AI_cup/
 
 ## 📂 各檔案與資料夾詳細說明
 
-### 🔧 配置檔案
+### 配置檔案
 
 #### `Config/config.py`
 **用途**: 集中管理所有超參數與路徑設定，方便調整實驗配置
@@ -131,7 +132,7 @@ AI_cup/
 
 ---
 
-### 📊 資料前處理模組 (Preprocess/)
+### 資料前處理模組 (Preprocess/)
 
 #### `Preprocess/data_loader.py`
 **用途**: 載入競賽原始資料並進行基本預處理
@@ -167,7 +168,7 @@ AI_cup/
 
 ---
 
-### 🤖 模型模組 (Model/)
+### 模型模組 (Model/)
 
 #### `Model/ensemble_trainer.py`
 **用途**: 訓練 Ensemble 模型並進行交叉驗證
@@ -200,7 +201,7 @@ AI_cup/
 
 ---
 
-### 🛠️ 工具模組 (Utils/)
+### 工具模組 (Utils/)
 
 #### `Utils/evaluation.py`
 **用途**: 評估指標計算與最佳閾值搜索
@@ -218,7 +219,7 @@ AI_cup/
 
 ---
 
-### 🚀 主程式
+### 主程式
 
 #### `main.py`
 **用途**: 模組化執行範例，展示如何組合各模組
@@ -231,11 +232,10 @@ AI_cup/
 - 一鍵執行完整 Pipeline
 - 內建所有邏輯（不依賴外部模組）
 - 適合快速執行與結果重現
-- **推薦用於實際競賽提交**
 
 ---
 
-### 📄 文件檔案
+### 文件檔案
 
 #### `README.md`
 本檔案，包含完整專案說明、環境需求、使用方法、實驗結果
@@ -251,7 +251,7 @@ Python 套件依賴清單，含精確版本號（如 pandas==2.2.3）
 
 ---
 
-### 📦 輸出檔案 (output/)
+### 輸出檔案 (output/)
 
 #### `submission_improved.csv`
 最終預測結果，競賽提交格式：
@@ -279,7 +279,7 @@ acct,label,probability
 
 ---
 
-## 🚀 使用方法
+## 使用方法
 
 ### 1. 資料準備
 將競賽資料放置於 `./40_初賽資料_V3 1/初賽資料/` 目錄下：
@@ -347,7 +347,7 @@ detector.prepare_test_data(use_cache=False)
 
 ---
 
-## ⚙️ 超參數設定
+## 超參數設定
 
 ### 採樣策略
 ```python
@@ -398,7 +398,7 @@ N_JOBS = -1               # 使用所有 CPU 核心（LightGBM/XGBoost）
 
 ---
 
-## 📈 閾值分析視覺化
+## 閾值分析視覺化
 
 執行後會生成 `threshold_analysis.png`，展示：
 - F1 Score vs Threshold 曲線
@@ -410,7 +410,7 @@ N_JOBS = -1               # 使用所有 CPU 核心（LightGBM/XGBoost）
 
 ---
 
-## 🔍 關鍵發現
+## 關鍵發現
 
 ### 1. 時間特徵最重要
 - `date_range`、`first_week_ratio`、`last_week_ratio` 為最重要特徵
@@ -430,7 +430,7 @@ N_JOBS = -1               # 使用所有 CPU 核心（LightGBM/XGBoost）
 
 ---
 
-## 👥 參賽隊伍資訊
+## 參賽隊伍資訊
 
 - **隊伍名稱**: [TEAM_8423]
 - **隊長**: 許智恩
@@ -440,14 +440,14 @@ N_JOBS = -1               # 使用所有 CPU 核心（LightGBM/XGBoost）
 
 ---
 
-## 📧 聯絡方式
+## 聯絡方式
 
 如有任何問題，歡迎聯繫：
 - **Email**: jameshsu1973@gmail.com
 
 ---
 
-## 📄 授權
+## 授權
 
 本專案僅供學術研究與競賽使用。
 
