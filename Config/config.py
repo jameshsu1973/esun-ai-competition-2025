@@ -51,7 +51,7 @@ class Config:
     """
     # ==================== 路徑設定 ====================
     DATA_PATH = './40_初賽資料_V3 1/初賽資料/'
-    OUTPUT_PATH = '.'
+    OUTPUT_PATH = './output/'
     
     TRAIN_FEATURE_CACHE = "features_train.pkl"
     TEST_FEATURE_CACHE = "features_test.pkl"

@@ -78,7 +78,7 @@ AI_cup/
 ├── git_setup.ps1                      # Git 初始化腳本
 │
 ├── main.py                            # 模組化執行入口（推薦用於學習架構）
-├── ImprovedFraudDetector.py           # 整合式主程式（推薦用於快速執行）
+├── ImprovedFraudDetector.py          # 整合式主程式（推薦用於快速執行）
 │
 ├── Config/                            # 【配置模組】集中管理所有超參數與設定
 │   ├── __init__.py                    # 模組初始化檔案
@@ -87,7 +87,7 @@ AI_cup/
 ├── Preprocess/                        # 【資料前處理模組】資料載入與特徵工程
 │   ├── __init__.py                    # 模組初始化檔案
 │   ├── data_loader.py                 # DataLoader 類別：載入並預處理原始資料
-│   └── feature_engineering.py         # FeatureEngineer 類別：提取 62 維特徵
+│   └── feature_engineering.py        # FeatureEngineer 類別：提取 62 維特徵
 │
 ├── Model/                             # 【模型模組】訓練與預測
 │   ├── __init__.py                    # 模組初始化檔案
@@ -105,12 +105,12 @@ AI_cup/
 │       ├── acct_alert.csv             # 警示帳戶標籤（訓練集目標變數）
 │       └── acct_predict.csv           # 待預測帳戶清單（測試集帳戶 ID）
 │
-│                                      # 【輸出目錄】模型結果與快取檔案
-├── submission_improved.csv            # 最終預測結果（競賽提交格式：acct, label）
-├── submission_improved_with_prob.csv  # 含機率版本（供分析使用）
-├── features_train.pkl                 # 訓練集特徵快取（62 維 × N 樣本）
-├── features_test.pkl                  # 測試集特徵快取（62 維 × 4,780 樣本）
-└── threshold_analysis.png             # 閾值分析視覺化圖表
+└── output/                            # 【輸出目錄】模型結果與快取檔案
+    ├── submission_improved.csv        # 最終預測結果（競賽提交格式：acct, label）
+    ├── submission_improved_with_prob.csv  # 含機率版本（供分析使用）
+    ├── features_train.pkl             # 訓練集特徵快取（62 維 × N 樣本）
+    ├── features_test.pkl              # 測試集特徵快取（62 維 × 4,780 樣本）
+    └── threshold_analysis.png         # 閾值分析視覺化圖表
 ```
 
 ---
@@ -251,7 +251,7 @@ Python 套件依賴清單，含精確版本號（如 pandas==2.2.3）
 
 ---
 
-### 輸出檔案 (output)
+### 輸出檔案 (output/)
 
 #### `submission_improved.csv`
 最終預測結果，競賽提交格式：
@@ -303,7 +303,7 @@ python ImprovedFraudDetector.py
 3. 提取測試集特徵（使用快取加速）
 4. 訓練 Ensemble 模型（5-Fold CV）
 5. 自動搜索最佳閾值
-6. 預測並儲存結果至預設目錄底下
+6. 預測並儲存結果至 `output/submission_improved.csv`
 
 ### 3. 模組化執行（進階）
 分步驟執行各模組：

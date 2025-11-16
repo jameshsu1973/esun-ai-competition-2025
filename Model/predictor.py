@@ -15,6 +15,7 @@ Example:
     >>> predictor.save(predictions, probs, df_test['acct'])
 """
 
+import os
 import numpy as np
 import pandas as pd
 from Config.config import Config
@@ -140,8 +141,14 @@ class Predictor:
             ✓ 已儲存: ./output/submission_improved.csv
             ✓ 含機率版本: ./output/submission_improved_with_prob.csv
         """
-        if output_path is None:
-            output_path = Config.OUTPUT_PATH + 'submission_improved.csv'
+        # if output_path is None:
+        #     output_path = Config.OUTPUT_PATH + 'submission_improved.csv'
+        
+        # 確保輸出資料夾存在
+        output_dir = os.path.dirname(output_path)
+        if output_dir and not os.path.exists(output_dir):
+            os.makedirs(output_dir)
+            print(f"✓ 已建立資料夾: {output_dir}")
         
         print("="*70)
         print("💾 [儲存結果] 輸出預測結果")
